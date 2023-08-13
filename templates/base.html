@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block page_title %}  {% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'app.css' %}">
+
+    {% block css_links %} {% endblock %}
+</head>
+<body>
+    <!-- header content start -->
+    <header id="main-navigation">
+        <h1><a href="{% url 'main-page' %}">Sachin's Blog</a></h1>
+        <nav>
+            <a href="{% url 'posts-page' %}">All Posts</a>
+        </nav>
+    </header>
+
+    <!-- header content end -->
+
+    <!-- template inheritance start -->
+    {% block content %}
+
+    {% endblock %}
+    <!-- template inheritance end -->
+</body>
+</html>
